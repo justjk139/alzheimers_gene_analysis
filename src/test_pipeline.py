@@ -143,4 +143,7 @@ def test_kallisto(pass_cut_data):
         print("Continuing to next file:")
     df.to_csv('kallisto_counts.csv')
     os.system("mv kallisto_counts.csv ~/alzheimers_gene_analysis")
+    os.chdir("..")
+    os.chdir("..")
+    os.chdir("..")
     return
