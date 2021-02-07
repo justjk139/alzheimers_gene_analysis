@@ -1,7 +1,7 @@
 # DSC180B_Capstone_Project
 Ryan Cummings (A14363068),
 Gregory Thein (A##),
-Justin Kang (A###),
+Justin Kang (A14982707),
 Prof. Shannon Ellis,
 Code Artifact Checkpoint
 
