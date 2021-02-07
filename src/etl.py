@@ -16,10 +16,10 @@ def get_file_names(file_path):
 #for test
 def shorten_data(test_1,test_2):
     print("Creating the shorten files for testing:")
-    os.system("zcat test/testdata/"+test_1+" | head -700000 > "+test_1[0:9]+".fastq.gz")
-    os.system("zcat test/testdata/"+test_2+" | head -700000 > "+test_2[0:9]+".fastq.gz")
+    os.system("zcat test/testdata/"+test_1+" | head -70000 > "+test_1[0:9]+".fastq.gz")
+    os.system("zcat test/testdata/"+test_2+" | head -70000 > "+test_2[0:9]+".fastq.gz")
     print("Files created successfully!")
-    return test_1[0:9]+"_test.fastq", test_2[0:9]+"_test.fastq"
+    return test_1[0:9]+".fastq.gz", test_2[0:9]+".fastq.gz"
 
 
 

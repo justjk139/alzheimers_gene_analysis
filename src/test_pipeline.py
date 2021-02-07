@@ -6,7 +6,7 @@ import os
 import pandas as pd
 
 #fastqc
-def fastqc(raw_files):
+def test_fastqc(raw_files):
     pass_data = [] #creating array that will hold name of passing data
     fail_data = [] #creating array that will hold name of not passing data
     for i in raw_files:
@@ -16,7 +16,8 @@ def fastqc(raw_files):
         print("making dir")
         os.system('mkdir fastq_out')
         print("running fastqc...")
-        os.system('/opt/FastQC/fastqc /teams/DSC180A_FA20_A00/b04genetics/group_1/raw_data/'+i+' --extract --outdir=fastq_out/')
+        #os.system('/opt/FastQC/fastqc /teams/DSC180A_FA20_A00/b04genetics/group_1/raw_data/'+i+' --extract --outdir=fastq_out/')
+        os.system('/opt/FastQC/fastqc test/testdata/'+i+' --extract --outdir=fastq_out/')
         print("Fastqc finished")
       
         print("Opening file")
@@ -104,14 +105,14 @@ def second_fastqc():
 
 
 #kallisto
-def kallisto(pass_cut_data):
+def test_kallisto(pass_cut_data):
     
     print("Making dir for Kallisto Output:")
     os.system("mkdir kallisto_tmp")
     for i in pass_cut_data:
         print("Running Kallisto:")
         #print(i)
-        command = f"/opt/kallisto_linux-v0.42.4/kallisto quant -i data/reference.idx -o kallisto_tmp/kallisto_output_"+i[0:9]+" --single -l 50 -s 10 -b 8 -t 8 cutadapt_tmp/"+i
+        command = f"/opt/kallisto_linux-v0.42.4/kallisto quant -i data/reference.idx -o kallisto_tmp/kallisto_output_"+i[0:9]+" --single -l 50 -s 10 -b 8 -t 8 "+i
         os.system(command)
     print("Kallisto successfully ran")
     print("Still need to combine all the CSVs though!")
@@ -139,7 +140,7 @@ def kallisto(pass_cut_data):
             df = pd.concat([df,tmp_df],axis=1)
 
         print("Added to the dataframe")
-        print("Continuing to next iteration:\n")
+        print("Continuing to next file:")
     df.to_csv('kallisto_counts.csv')
-    os.system("mv kallisto_counts.csv data/out")
+    os.system("mv kallisto_counts.csv ~/alzheimers_gene_analysis")
     return
