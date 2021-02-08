@@ -44,6 +44,7 @@ def cutadapt(pass_data):
         cut_fastq_files.append(i)
         print("cutadapt finished on this file, starting on next file:")
     print("cutadapt finished in its entirety")
+    #os.system("mkdir data")
     os.system("mkdir out")
     os.system("mv out data")
     os.system("mv cutadapt_tmp data/out")
@@ -106,17 +107,17 @@ def second_fastqc():
 
 #kallisto
 def test_kallisto(pass_cut_data):
-    
     print("Making dir for Kallisto Output:")
     os.system("mkdir kallisto_tmp")
     for i in pass_cut_data:
         print("Running Kallisto:")
         #print(i)
-        command = f"/opt/kallisto_linux-v0.42.4/kallisto quant -i data/reference.idx -o kallisto_tmp/kallisto_output_"+i[0:9]+" --single -l 50 -s 10 -b 8 -t 8 "+i
+        command = f"/opt/kallisto_linux-v0.42.4/kallisto quant -i /teams/DSC180A_FA20_A00/b04genetics/group_1/reference.idx -o kallisto_tmp/kallisto_output_"+i[0:9]+" --single -l 50 -s 10 -b 8 -t 8 "+i
         os.system(command)
     print("Kallisto successfully ran")
     print("Still need to combine all the CSVs though!")
     print("Moving the Kallisto_tmp data to data/out/")
+    os.system("mkdir data") #remove this for final code and uncomment the cutadapt one
     os.system("mkdir out")
     os.system("mv out data")
     os.system("mv kallisto_tmp data/out")
