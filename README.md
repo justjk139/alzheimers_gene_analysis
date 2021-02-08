@@ -57,27 +57,24 @@ Will be added in the future!
 
 
 #### Tasks Completed Till Now:
-Revised initial project proposal to new objective/goal
-Gene expression => blood sample data (miRNA)
-Unavailable NIAGADS database access => publicly available blood sample data
-Uploaded data into DSMLP, successfully
-Tested cutadapt, FastQC, DESeq2 on small subset to ensure it works (it does)
-Found articles/research papers 
+- Revised initial project proposal to new objective/goal
+- Gene expression => blood sample data (miRNA)
+- Unavailable NIAGADS database access => publicly available blood sample data
+- Uploaded data into DSMLP, successfully
+- Tested cutadapt, FastQC, DESeq2 on small subset to ensure it works (it does)
+- Found articles/research papers 
+- Run complete data on all necessary tools
 
 #### Current tasks and concerns/issues is any:
-Kallisto almost working (looking for index reference)
-Prepping for running complete dataset on all necessary tools
-Dockerfile:
-Current dockerfile is a copy of one used last quarter
-This current has an outdated TrimGalore version that we would like to use but cannot since it does not support the current version of cutadapt
-Possible solution: rewrite dockerfile ourselves to update TrimGalore manually
+- Dockerfile:
+- Current dockerfile is a copy of one used last quarter
+- This current has an outdated TrimGalore version that we would like to use but cannot since it does not support the current version of cutadapt
+- Possible solution: rewrite dockerfile ourselves to update TrimGalore manually
 
 #### Future Plan:
-Run complete data on all necessary tools (within the next few days)
-Begin working on EDA after running data through pipeline
-Project results on website (end of the quarter)
-Update repo appropriately 
-Mention that now that we have data and have most of the tools running, we are able to make the necessary strides in our project from EDA to updating the repository to the standards outlined to us by the instructors
+- Begin working on EDA after running data through pipeline
+- Project results on website (end of the quarter)
+- Update repo appropriately 
 
 
 
