@@ -11,7 +11,7 @@ def function_to_convert_notebook(outdir, report_in_path, report_out_path):
     #print(os.listdir())
     os.system("jupyter nbconvert --to html "+ report_in_path)
     #print(os.listdir())
-    os.system("mv notebooks/report.html report")
+    os.system("mv "+report_out_path+" report")
     return
 
 def function_to_convert_notebook_test(outdir, report_in_path, report_out_path):
