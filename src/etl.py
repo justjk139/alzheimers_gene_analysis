@@ -9,7 +9,9 @@ import os
 def get_file_names(file_path):
     raw_files = []
     os.chdir(file_path)
+    print("\nGetting file names from DSMLP:\n")
     raw_files = os.listdir()
+    print(raw_files)
     os.chdir("/datasets/home/40/840/r1cummin/alzheimers_gene_analysis")
     return raw_files
 

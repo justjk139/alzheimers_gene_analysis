@@ -23,13 +23,15 @@ def main(targets):
         with open('config/data-params.json') as fh:
             data_cfg = json.load(fh)
             get_file_names(**data_cfg)
-        print("This is a placeholder for now")
       
     if 'eda' in targets:
         # HERE is where EDA will be implemented
         with open('config/eda-params.json') as fh:
             eda_cfg = json.load(fh)
             function_to_convert_notebook(**eda_cfg)
+            
+    if 'analyze' in targets:
+        print("Placeholder")
     
     if 'test' in targets:
         
