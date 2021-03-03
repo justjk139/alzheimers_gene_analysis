@@ -25,14 +25,20 @@ def main(targets):
             get_file_names(**data_cfg)
       
     if 'eda' in targets:
-        # HERE is where EDA will be implemented
         with open('config/eda-params.json') as fh:
             eda_cfg = json.load(fh)
             function_to_convert_notebook(**eda_cfg)
             
     if 'analyze' in targets:
-        print("Placeholder")
-    
+        with open('config/analyze-params.json') as fh:
+            analyze_cfg = json.load(fh)
+            function_to_convert_notebook(**analyze_cfg)
+            
+    if 'viz' in targets:
+        with open('config/viz-params.json') as fh:
+            viz_cfg = json.load(fh)
+            function_to_convert_notebook(**viz_cfg)
+        
     if 'test' in targets:
         
         print("\n\nTest is now running\n")
