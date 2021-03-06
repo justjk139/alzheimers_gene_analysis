@@ -43,6 +43,7 @@ def cutadapt(pass_data):
         cut_fastq_files.append(i)
         print("cutadapt finished on this file, starting on next file:")
     print("cutadapt finished in its entirety")
+    os.system("mkdir data")
     os.system("mkdir out")
     os.system("mv out data")
     os.system("mv cutadapt_tmp data/out")
@@ -116,7 +117,7 @@ def kallisto(pass_cut_data):
     print("Kallisto successfully ran")
     print("Still need to combine all the CSVs though!")
     print("Moving the Kallisto_tmp data to data/out/")
-    os.system("mkdir out")
+#     os.system("mkdir out")
     os.system("mv out data")
     os.system("mv kallisto_tmp data/out")
     
