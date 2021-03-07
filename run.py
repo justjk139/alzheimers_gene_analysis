@@ -95,9 +95,10 @@ def main(targets):
             test_kallisto(pass_data)
             
             #generating the report here:
-            with open('config/report-params.json') as fh:
-                report_cfg = json.load(fh)
-                function_to_convert_notebook_test(**report_cfg)
+        print(os.listdir())
+        with open('config/report-params.json') as fh:
+            report_cfg = json.load(fh)
+            function_to_convert_notebook_test(**report_cfg)
             
             print("Success!")
         print("\n\nTest finished running\n\n")
